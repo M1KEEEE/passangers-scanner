@@ -74,12 +74,13 @@ restricted = ["нож", "бензин", "граната", "пистолет"]
 accepted = []
 
 for passenger in passengers:
+	passenger["проверен"] = True
 	for item in passenger["ручная кладь"]:
 		if item in restricted:
 			print("Обнаружен запрещенный предмет", item, "у пассажира", passenger["имя"])
 			break
-		else:
-			print(passenger["имя"], "допущен на рейс")
 	else:
 		print(passenger["имя"], "допущен на рейс")
 		accepted.append(passenger)
+
+print(accepted)
